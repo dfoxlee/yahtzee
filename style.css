@@ -1,0 +1,350 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* MAIN CONTAINER \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+
+.main_container {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #550000;
+}
+
+.head_container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.yahtzee_logo {
+    width: 70%;
+    max-width: 300px;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+/* BUTTON CONTAINER \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+
+.button_container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.button_wrapper {
+    width: 90%;
+    max-width: 250px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.game_buttons {
+    width: 100px;
+    height: 30px;
+    border: none;
+    background-color: #e77208;
+    border-radius: 5px;
+    color: white;
+    transition: box-shadow .3s, background-color .3s;
+}
+
+.game_buttons:hover {
+    box-shadow: 0 0 10px 5px white;
+    cursor: pointer;
+}
+
+.game_buttons:active {
+    background-color: #f6cf5e;
+    box-shadow: none;
+    cursor: grab;
+}
+
+@media only screen and (max-width: 230px) {
+    .button_wrapper {
+        justify-content: center;
+    }
+
+    .game_buttons {
+        margin-top: 5px;
+    }
+}
+
+/* ROLL COUNT CONTAINER \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+
+.roll_count_container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.roll_count_wrapper {
+    padding: 2px;
+    color: white;
+}
+
+.roll_count_title {
+    font-weight: 300;
+}
+
+/* DICE CONTAINER \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+
+.dice_container {
+    width: 100%;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.dice_wrapper {
+    width: 90%;
+    max-width: 400px;
+    border: 1px white;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.game_dice {
+    width: 50px;
+    height: 50px;
+    border-radius: 18px;
+    /* background-image: linear-gradient(rgba(0.1, 0.1, 0.1, 0.5), rgba(0.1, 0.1, 0.1, 0.5)), url('./resources/one_dice.png'); */
+    background-position: center;
+    background-size: cover;
+}
+
+.game_dice:hover {
+    cursor: pointer;
+}
+
+.game_dice:active {
+    cursor: grabbing;
+}
+
+@media only screen and (max-width: 360px) {
+    .dice_wrapper {
+        justify-content: center;
+    }
+
+    .game_dice {
+        margin: 2px 2px;
+    }
+}
+
+/* SCORE CARD CONTAINER \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+
+.score_card_container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: black;
+    padding-bottom: 20px;
+}
+
+.score_card_wrapper {  display: grid;
+    grid-template-columns: .75fr .75fr .5fr .25fr .25fr .25fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "upper_section how_to_score add_score score_column score_column score_column"
+      "aces aces_how aces_add aces_score aces_score aces_score"
+      "twos twos_how twos_add twos_score twos_score twos_score"
+      "threes threes_how threes_add threes_score threes_score threes_score"
+      "fours fours_how fours_add fours_score fours_score fours_score"
+      "fives fives_how fives_add fives_score fives_score fives_score"
+      "sixes sixes_how sixes_add sixes_score sixes_score sixes_score"
+      "bonus bonus bonus bonus_score bonus_score bonus_score"
+      "upper_total upper_total upper_total total_upper_score total_upper_score total_upper_score"
+      "lower_section lower_section lower_section lower_section lower_section lower_section"
+      "kind_3 kind_3_how kind_3_add kind_3_score kind_3_score kind_3_score"
+      "kind_4 kind_4_how kind_4_add kind_4_score kind_4_score kind_4_score"
+      "full_house full_house_how full_house_add full_house_score full_house_score full_house_score"
+      "sm_straight sm_straight_how sm_straight_add sm_straight_score sm_straight_score sm_straight_score"
+      "lg_straight lg_straight_how lg_straight_add lg_straight_score lg_straight_score lg_straight_score"
+      "yahtzee yahtzee yahtzee yahtzee_score yahtzee_score yahtzee_score"
+      "chance chance_how chance_add chance_score chance_score chance_score"
+      "yahtzee_bonus yahtzee_bonus yahtzee_bonus yahtzee_bonus_1 yahtzee_bonus_2 yahtzee_bonus_3"
+      "lower_total lower_total lower_total lower_total_score lower_total_score lower_total_score"
+      "game_total game_total game_total game_total_score game_total_score game_total_score";
+    text-align: center;
+    background-color: white;
+    width: 90%;
+    max-width: 475px;
+}
+
+.score_card_wrapper, 
+.score_card_wrapper div {
+border: 1px solid black;
+}
+
+.score_card_wrapper div {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.score_how {
+font-size: 0.625rem;
+}
+
+.score_title {
+    font-weight: bold;
+}
+
+.add_button {
+    border: none;
+    height: 20px;
+    width: 50px;
+    margin: 2px;
+    border-radius: 5px;
+    background-color: green;
+    color: white;
+}
+
+.add_button:hover {
+    cursor: pointer;
+}
+
+.add_button:active {
+    cursor: grabbing;
+    background-color: darkgreen;
+}
+
+.how_to_score { grid-area: how_to_score; }
+
+.upper_section { grid-area: upper_section; }
+
+.add_score { grid-area: add_score; }
+
+.score_column { grid-area: score_column; }
+
+.aces { grid-area: aces; }
+
+.aces_how { grid-area: aces_how; }
+
+.aces_score { grid-area: aces_score; }
+
+.aces_add { grid-area: aces_add; }
+
+.bonus { grid-area: bonus; }
+
+.upper_total { grid-area: upper_total; }
+
+.bonus_score { grid-area: bonus_score; }
+
+.total_upper_score { grid-area: total_upper_score; }
+
+.lower_section { grid-area: lower_section; }
+
+.kind_3 { grid-area: kind_3; }
+
+.kind_3_how { grid-area: kind_3_how; }
+
+.kind_3_add { grid-area: kind_3_add; }
+
+.kind_3_score { grid-area: kind_3_score; }
+
+.lower_total { grid-area: lower_total; }
+
+.yahtzee_bonus { grid-area: yahtzee_bonus; }
+
+.yahtzee { grid-area: yahtzee; }
+
+.yahtzee_bonus_1 { grid-area: yahtzee_bonus_1; }
+
+.yahtzee_bonus_2 { grid-area: yahtzee_bonus_2; }
+
+.yahtzee_bonus_3 { grid-area: yahtzee_bonus_3; }
+
+.twos { grid-area: twos; }
+
+.twos_how { grid-area: twos_how; }
+
+.twos_add { grid-area: twos_add; }
+
+.twos_score { grid-area: twos_score; }
+
+.threes { grid-area: threes; }
+
+.threes_how { grid-area: threes_how; }
+
+.threes_add { grid-area: threes_add; }
+
+.threes_score { grid-area: threes_score; }
+
+.fours { grid-area: fours; }
+
+.fours_how { grid-area: fours_how; }
+
+.fives { grid-area: fives; }
+
+.fives_how { grid-area: fives_how; }
+
+.fours_add { grid-area: fours_add; }
+
+.fours_score { grid-area: fours_score; }
+
+.fives_add { grid-area: fives_add; }
+
+.fives_score { grid-area: fives_score; }
+
+.sixes { grid-area: sixes; }
+
+.sixes_how { grid-area: sixes_how; }
+
+.sixes_add { grid-area: sixes_add; }
+
+.sixes_score { grid-area: sixes_score; }
+
+.kind_4 { grid-area: kind_4; }
+
+.full_house { grid-area: full_house; }
+
+.sm_straight { grid-area: sm_straight; }
+
+.lg_straight { grid-area: lg_straight; }
+
+.chance { grid-area: chance; }
+
+.kind_4_how { grid-area: kind_4_how; }
+
+.full_house_how { grid-area: full_house_how; }
+
+.sm_straight_how { grid-area: sm_straight_how; }
+
+.lg_straight_how { grid-area: lg_straight_how; }
+
+.kind_4_add { grid-area: kind_4_add; }
+
+.chance_how { grid-area: chance_how; }
+
+.full_house_add { grid-area: full_house_add; }
+
+.sm_straight_add { grid-area: sm_straight_add; }
+
+.lg_straight_add { grid-area: lg_straight_add; }
+
+.chance_add { grid-area: chance_add; }
+
+.kind_4_score { grid-area: kind_4_score; }
+
+.full_house_score { grid-area: full_house_score; }
+
+.sm_straight_score { grid-area: sm_straight_score; }
+
+.lg_straight_score { grid-area: lg_straight_score; }
+
+.yahtzee_score { grid-area: yahtzee_score; }
+
+.chance_score { grid-area: chance_score; }
+
+.lower_total_score { grid-area: lower_total_score; }
+
+.game_total_score { grid-area: game_total_score; }
+
+.game_total { grid-area: game_total; }

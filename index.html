@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Yahtzee Practice B</title>
+        <meta name="description" content="Online Yahtzee practice game.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./style_B.css">
+    </head>
+    <body>
+        <main class="main_container">
+            <header class="head_container">
+                <img class = "yahtzee_logo" src="./resources/yahtzee_logo.jpg" alt="Yahtzee logo with dice rolling.">
+            </header>
+
+            <section class="button_container">
+                <div class="button_wrapper">
+                    <button id="new_game_btn" class="game_buttons">New Game</button>
+                    <button id="roll_btn" class="game_buttons">Roll</button>
+                </div>
+            </section>
+
+            <section class="roll_count_container">
+                <div class="roll_count_wrapper">
+                    <h2 class="roll_count_title">Roll Count: <span id="roll_count">0</span></h2>
+                </div>
+            </section>
+
+            <section class="dice_container">
+                <div class="dice_wrapper">
+                    <div id="dice_1" class="game_dice"></div>
+                    <div id="dice_2" class="game_dice"></div>
+                    <div id="dice_3" class="game_dice"></div>
+                    <div id="dice_4" class="game_dice"></div>
+                    <div id="dice_5" class="game_dice"></div>
+                </div>
+            </section>
+
+            <section class="score_card_container">
+                <div class="score_card_wrapper">
+                    <div class="how_to_score score_title">
+                        <span>How to Score</span>
+                    </div>
+                    <div class="upper_section score_title">
+                        <span>Upper Section</span>
+                    </div>
+                    <div class="add_score score_title">
+                        <span>Add Score</span>
+                    </div>
+                    <div class="score_column score_title">
+                        <span>How to Score</span>
+                    </div>
+                    <div class="aces">
+                        <span>Aces</span>
+                    </div>
+                    <div class="aces_how score_how">
+                        <span>Count and add only Aces</span>
+                    </div>
+                    <div class="aces_score">
+                        <span id="aces_score" class="check_score upper_score score">-</span>
+                    </div>
+                    <div class="aces_add">
+                        <button id="aces_add" class="add_button">Add</button>
+                    </div>
+                    <div class="bonus">
+                        <span>Bonus (if total upper score > 62)</span>
+                    </div>
+                    <div class="upper_total">
+                        <span>Upper Total</span>
+                    </div>
+                    <div class="bonus_score">
+                        <span id="bonus_score" class="score">-</span>
+                    </div>
+                    <div class="total_upper_score">
+                        <span id="total_upper_score" class="score">-</span>
+                    </div>
+                    <div class="lower_section">
+                        <span class="score_title">Lower Section</span>
+                    </div>
+                    <div class="kind_3">
+                        <span>3 of a Kind</span>
+                    </div>
+                    <div class="kind_3_how">
+                        <span class="score_how">Add total of all dice</span>
+                    </div>
+                    <div class="kind_3_add">
+                        <button id="kind_3_add" class="add_button">Add</button>
+                    </div>
+                    <div class="kind_3_score">
+                        <span id="kind_3_score" class="check_score lower_score score">-</span>
+                    </div>
+                    <div class="lower_total">
+                        <span class="score_title">Lower Total</span>
+                    </div>
+                    <div class="yahtzee_bonus">
+                        <span>Yahtzee Bonus (X for Each Yahtzee)</span>
+                    </div>
+                    <div class="yahtzee">
+                        <span>YAHTZEE</span>
+                    </div>
+                    <div class="yahtzee_bonus_1">
+                        <span id="yahtzee_bonus_1"></span>
+                    </div>
+                    <div class="yahtzee_bonus_2">
+                        <span id="yahtzee_bonus_2"></span>
+                    </div>
+                    <div class="yahtzee_bonus_3">
+                        <span id="yahtzee_bonus_3"></span>
+                    </div>
+                    <div class="twos">
+                        <span>Twos</span>
+                    </div>
+                    <div class="twos_how">
+                        <span class="score_how">Count and add only Twos</span>
+                    </div>
+                    <div class="twos_add">
+                        <button id="twos_add" class="add_button">Add</button>
+                    </div>
+                    <div class="twos_score">
+                        <span id="twos_score" class="check_score upper_score score">-</span>
+                    </div>
+                    <div class="threes">
+                        <span>Threes</span>
+                    </div>
+                    <div class="threes_how">
+                        <span class="score_how">Count and add only Threes</span>
+                    </div>
+                    <div class="threes_add">
+                        <button id="threes_add" class="add_button">Add</button>
+                    </div>
+                    <div class="threes_score">
+                        <class id="threes_score" class="check_score upper_score score">-</class>
+                    </div>
+                    <div class="fours">
+                        <span>Fours</span>
+                    </div>
+                    <div class="fours_how">
+                        <span class="score_how">Count and add only Fours</span>
+                    </div>
+                    <div class="fives">
+                        <span>Fives</span>
+                    </div>
+                    <div class="fives_how">
+                        <span class="score_how">Count and add only Fives</span>
+                    </div>
+                    <div class="fours_add">
+                        <button id="fours_add" class="add_button">Add</button>
+                    </div>
+                    <div class="fours_score">
+                        <span id="fours_score" class="check_score upper_score score">-</span>
+                    </div>
+                    <div class="fives_add">
+                        <button id="fives_add" class="add_button">Add</button>
+                    </div>
+                    <div class="fives_score">
+                        <span id="fives_score" class="check_score upper_score score">-</span>
+                    </div>
+                    <div class="sixes">
+                        <span>Sixes</span>
+                    </div>
+                    <div class="sixes_how">
+                        <span class="score_how">Count and add only Sixes</span>
+                    </div>
+                    <div class="sixes_add">
+                        <button id="sixes_add" class="add_button">Add</button>
+                    </div>
+                    <div class="sixes_score">
+                        <span id="sixes_score" class="check_score upper_score score">-</span>
+                    </div>
+                    <div class="kind_4">
+                        <span>4 of a Kind</span>
+                    </div>
+                    <div class="full_house">
+                        <span>Full House</span>
+                    </div>
+                    <div class="sm_straight">
+                        <span>Sm Straight</span>
+                    </div>
+                    <div class="lg_straight">
+                        <span>Lg Straight</span>
+                    </div>
+                    <div class="chance">
+                        <span>Chance</span>
+                    </div>
+                    <div class="kind_4_how">
+                        <span class="score_how">Add total of all dice</span>
+                    </div>
+                    <div class="full_house_how">
+                        <span class="score_how">Score 25</span>
+                    </div>
+                    <div class="sm_straight_how">
+                        <span class="score_how">Score 30 for sequence of 4</span>
+                    </div>
+                    <div class="lg_straight_how">
+                        <span class="score_how">Score 40 for sequence of 5</span>
+                    </div>
+                    <div class="kind_4_add">
+                        <button id="kind_4_add" class="add_button">Add</button>
+                    </div>
+                    <div class="chance_how">
+                        <span class="score_how">Score total of all dice</span>
+                    </div>
+                    <div class="full_house_add">
+                        <button id="full_house_add" class="add_button">Add</button>
+                    </div>
+                    <div class="sm_straight_add">
+                        <button id="sm_straight_add" class="add_button">Add</button>
+                    </div>
+                    <div class="lg_straight_add">
+                        <button id="lg_straight_add" class="add_button">Add</button>
+                    </div>
+                    <div class="chance_add">
+                        <button id="chance_add" class="add_button">Add</button>
+                    </div>
+                    <div class="kind_4_score">
+                        <span id="kind_4_score" class="check_score lower_score score">-</span>
+                    </div>
+                    <div class="full_house_score">
+                        <spa id="full_house_score" class="check_score lower_score score">-</spa>
+                    </div>
+                    <div class="sm_straight_score">
+                        <span id="sm_straight_score" class="check_score lower_score score">-</span>
+                    </div>
+                    <div class="lg_straight_score">
+                        <span id="lg_straight_score" class="check_score lower_score score">-</span>
+                    </div>
+                    <div class="yahtzee_score">
+                        <span id="yahtzee_score" class="lower_score score">-</span>
+                    </div>
+                    <div class="chance_score">
+                        <span id="chance_score" class="check_score lower_score score">-</span>
+                    </div>
+                    <div class="lower_total_score">
+                        <span id="total_lower_score" class="score">-</span>
+                    </div>
+                    <div class="game_total_score">
+                        <span id="total_game_score" class="score">-</span>
+                    </div>
+                    <div class="game_total">
+                        <span>Game Total</span>
+                    </div>
+                  </div>
+            </section>
+
+        </main>
+        
+        <script src="./app_B.js" async defer></script>
+    </body>
+</html>
